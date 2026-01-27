@@ -1,4 +1,4 @@
-name: ELMS CI/CD
+name: ELMS CI (Build & Push)
 
 on:
   push:
@@ -7,10 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  build-and-deploy:
+  build-and-push:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -21,38 +23,14 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build backend
+      - name: Build backend image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/elms-backend:latest ./backend
 
-      - name: Build frontend
+      - name: Build frontend image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/elms-frontend:latest ./frontend
 
-      - name: Push backend
+      - name: Push backend image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/elms-backend:latest
 
-      - name: Push frontend
+      - name: Push frontend image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/elms-frontend:latest
-
-  deploy:
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to server
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/elms-backend:latest
-            docker pull ${{ secrets.DOCKER_USERNAME }}/elms-frontend:latest
-
-            docker stop elms-backend elms-frontend || true
-            docker rm elms-backend elms-frontend || true
-
-            docker run -d -p 5000:5000 --name elms-backend \
-              ${{ secrets.DOCKER_USERNAME }}/elms-backend:latest
-
-            docker run -d -p 3000:80 --name elms-frontend \
-              ${{ secrets.DOCKER_USERNAME }}/elms-frontend:latest
