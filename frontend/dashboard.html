@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>ELMS | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<script>
+  const user = localStorage.getItem("username");
+  if (!user) {
+    window.location.href = "index.html";
+  }
+</script>
+
+<body>
+
+<div class="header">
+  <div class="header-left">
+    Employee Leave Management System
+  </div>
+
+  <div class="header-right">
+    <span id="loggedUser" class="user-name"></span>
+    <button id="themeToggle">🌙</button>
+  </div>
+</div>
+
+<div class="container" style="display:flex;">
+  <ul id="sidebar-menu" class="sidebar"></ul>
+
+  <div style="flex:1; padding:20px;">
+    <div id="dashboard-cards" style="display:flex; gap:20px;"></div>
+    <div id="main-section"></div>
+  </div>
+</div>
+
+<script>
+  const username = localStorage.getItem("username");
+  if (!username) {
+    window.location.href = "index.html";
+  } else {
+    document.getElementById("loggedUser").innerText =
+      "👤 " + username;
+  }
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
