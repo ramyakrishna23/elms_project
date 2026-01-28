@@ -10,7 +10,7 @@ services:
     build: ./frontend
     container_name: elms-frontend
     ports:
-      - "3000:80"   # ✅ FIX HERE
+      - "3000:80"   
     depends_on:
       - backend
     restart: unless-stopped

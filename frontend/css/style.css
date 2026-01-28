@@ -558,3 +558,395 @@ body.dark .card {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
+.admin-header {
+  margin-bottom: 20px;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.stat-card strong {
+  font-size: 28px;
+  display: block;
+}
+
+.admin-add-user,
+.admin-table {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.add-user-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.add-user-row input,
+.add-user-row select {
+  flex: 1;
+}
+
+.add-user-row button {
+  padding: 10px 16px;
+}
+
+button.danger {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.muted {
+  color: #999;
+}
+.role-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.role-admin { background: #ffe0b2; color: #e65100; }
+.role-manager { background: #bbdefb; color: #0d47a1; }
+.role-employee { background: #c8e6c9; color: #1b5e20; }
+
+.admin-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  min-width: 140px;
+  text-align: center;
+}
+
+.add-user-row {
+  display: flex;
+  gap: 10px;
+}
+/* ================= ADMIN UI ENHANCEMENT ================= */
+
+body {
+  background: #f4f6fb;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* HEADINGS */
+h2, h3 {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+/* ADMIN STATS */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.stat-card b {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.stat-card span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* ADMIN BOX */
+.admin-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* ADD USER ROW */
+.add-user-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.add-user-row input,
+.add-user-row select {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.add-user-row input:focus,
+.add-user-row select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.2);
+}
+
+/* BUTTONS */
+button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:not(.danger) {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #fff;
+}
+
+/* DELETE BUTTON */
+button.danger {
+  background: #ef4444;
+  color: white;
+}
+
+button.danger:hover {
+  background: #dc2626;
+}
+
+/* TABLE */
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.leave-table th {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  padding: 14px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.leave-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.leave-table tr:hover {
+  background: #f9fafb;
+}
+
+/* ROLE BADGES */
+.role-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.role-admin {
+  background: #fff3cd;
+  color: #92400e;
+}
+
+.role-manager {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.role-employee {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* MUTED TEXT */
+.muted {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .add-user-row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+/* ================= LOGIN PAGE ================= */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.login-box {
+  width: 380px;
+  background: #ffffff;
+  padding: 34px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  animation: fadeIn 0.6s ease;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #1f2937;
+}
+
+.login-box input,
+.login-box select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.login-box input:focus,
+.login-box select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.login-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(79,70,229,0.4);
+}
+
+/* LOGIN ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* ================= APPLY LEAVE PAGE ================= */
+
+.leave-container {
+  max-width: 620px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.leave-container h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.leave-container label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.leave-container input,
+.leave-container select,
+.leave-container textarea {
+  width: 100%;
+  padding: 13px 15px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.leave-container input:focus,
+.leave-container select:focus,
+.leave-container textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+.leave-container button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.leave-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(16,185,129,0.4);
+}
+
